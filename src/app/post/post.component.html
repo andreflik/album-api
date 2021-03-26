@@ -1,0 +1,21 @@
+<mat-card fxFlex class="card">
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>{{post.titulo}}</mat-card-title>
+    <mat-card-subtitle>{{post.subtitulo}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="/storage/{{post.arquivo}}" alt="">
+  <mat-card-content>
+    <p>
+      {{post.mensagem}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="like()">LIKE</button>
+    <button mat-button color="accent" (click)="apagar()">APAGAR</button>
+    <mat-icon color="warn" *ngIf="post.like>0" [matBadge]="post.like" 
+      matBadgePosition="above after" matBadgeColor="warn"
+      matBadgeOverlap="false">favorite</mat-icon>
+  </mat-card-actions>
+</mat-card>
+
